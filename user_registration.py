@@ -120,6 +120,14 @@ def validate_password(password):
     if D_count <= 1:
         return False
     
+    special_chars = '!@#$%^&*()'
+    s_count = 0
+    for char in password:
+        if char in special_chars:
+            s_count += 1
+    if s_count < 1:
+        return False
+    
     return True
 
 
