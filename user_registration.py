@@ -50,6 +50,26 @@ def validate_last_name(last_name):
         return False
     return True
 
+def validate_email(email):
+
+    """
+    description:
+        Validates the email.
+
+    parameters:
+        email: The email to validate.
+
+    Returns:
+        True if the email is valid, False otherwise.
+    """
+
+    regex = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+    match = re.match(regex, email)
+    
+    if match:
+        return True
+    return False
+
 
 def main():
 
@@ -70,6 +90,15 @@ def main():
             break
         else:
             logger.info("Invalid last name. Please try again.")
+
+    while True:
+        email = input("enter email id: ")
+        logger = get_logger("validate_email")
+        if validate_email(email):
+            logger.info("email registered successfully")
+            break
+        else:
+            logger.info("Invalid email. Please try again")
 
 
 if __name__ == '__main__':
