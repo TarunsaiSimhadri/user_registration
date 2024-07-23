@@ -90,6 +90,23 @@ def validate_mobile_no(mobile_no):
         return True
     return False
 
+def validate_password(password):
+
+    """
+    description:
+        Validates the password.
+
+    parameters:
+        password: The password to validate.
+
+    Returns:
+        True if the password is valid, False otherwise.
+    """
+
+    if len(password) < 8:
+        return False
+    return True
+
 
 def main():
 
@@ -128,7 +145,16 @@ def main():
             break
         else:
             logger.info("Invalid mobile_no. Please try again")
-            
+
+    while True:
+        password = input("enter password: ")
+        logger = get_logger("validate_password")
+        if validate_password(password):
+            logger.info("password registered successfully")
+            break
+        else:
+            logger.info("Invalid password. Please try again")
+
 
 if __name__ == '__main__':
     main()
