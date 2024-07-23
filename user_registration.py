@@ -178,6 +178,8 @@ def main():
         else:
             logger.info("Invalid password. Please try again")
 
+    logger.info("User Registration successful!")
+
 
 if __name__ == '__main__':
     main()
