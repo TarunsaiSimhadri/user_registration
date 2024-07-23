@@ -70,6 +70,26 @@ def validate_email(email):
         return True
     return False
 
+def validate_mobile_no(mobile_no):
+
+    """
+    description:
+        Validates the mobile no.
+
+    parameters:
+        mobile no: The mobile no to validate.
+
+    Returns:
+        True if the mobile no is valid, False otherwise.
+    """
+
+    regex = r"^\d{2} \d{10}$"
+    match = re.match(regex, mobile_no)
+    
+    if match:
+        return True
+    return False
+
 
 def main():
 
@@ -100,6 +120,15 @@ def main():
         else:
             logger.info("Invalid email. Please try again")
 
+    while True:
+        mobile_no = input("enter mobile_no: ")
+        logger = get_logger("validate_mobile_no")
+        if validate_mobile_no(mobile_no):
+            logger.info("mobile_no registered successfully")
+            break
+        else:
+            logger.info("Invalid mobile_no. Please try again")
+            
 
 if __name__ == '__main__':
     main()
