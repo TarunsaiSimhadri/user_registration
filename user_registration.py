@@ -113,6 +113,13 @@ def validate_password(password):
     if U_count < 1:
         return False
     
+    D_count = 0
+    for char in password:
+        if char.isdigit():
+            D_count += 1
+    if D_count <= 1:
+        return False
+    
     return True
 
 
