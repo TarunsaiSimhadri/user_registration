@@ -105,6 +105,14 @@ def validate_password(password):
 
     if len(password) < 8:
         return False
+    
+    U_count = 0
+    for char in password:
+        if char.isupper():
+            U_count += 1
+    if U_count < 1:
+        return False
+    
     return True
 
 
