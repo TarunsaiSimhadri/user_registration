@@ -43,6 +43,12 @@ class TestUserRegistration(unittest.TestCase):
         self.assertFalse(user_registration.validate_email("abc@abc@gmail.com"))
         self.assertFalse(user_registration.validate_email("abc@gmail.com.1a"))
 
+    def test_validate_mobile_no(self):
+        self.assertTrue(user_registration.validate_mobile_no("92 9898989898"))
+        self.assertFalse(user_registration.validate_mobile_no("91 989898989"))
+        self.assertFalse(user_registration.validate_mobile_no("912 989898989"))
+
+
 
 if __name__ == "__main__":
     unittest.main()
