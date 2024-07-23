@@ -49,9 +49,9 @@ class TestUserRegistration(unittest.TestCase):
         self.assertFalse(user_registration.validate_mobile_no("912 989898989"))
 
     def test_validate_password(self):
-        self.assertTrue(user_registration.validate_password("Atar9898"))
-        self.assertFalse(user_registration.validate_password("tarunsai"))
-        self.assertFalse(user_registration.validate_password("98989"))
+        self.assertTrue(user_registration.validate_password("@Atar9898"))
+        self.assertFalse(user_registration.validate_password("Aarunsi98"))
+        self.assertFalse(user_registration.validate_password("9@8989"))
 
 
 
